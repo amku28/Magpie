@@ -24,4 +24,10 @@ public class MagpieRunner2 {
 		}
 	}
 
+	// When there is more than one keyword in an entered string, it prioritizes the
+	// keyword that is stated first in the conditionals of keyword responses.
+
+	// Question 1. The problem with statements with keywords inside another word, is that
+	// because we set the conditional to recognize the keyword anywhere in the string,
+	// it will respond with the response that the keyword calls for. 
 }
