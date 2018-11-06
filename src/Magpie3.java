@@ -36,6 +36,18 @@ public class Magpie3 {
 				|| findKeyword(statement, "sister") >= 0
 				|| findKeyword(statement, "brother") >= 0) {
 			response = "Tell me more about your family.";
+		} else if (findKeyword(statement, "cat") >= 0 || findKeyword(statement, "dog") >= 0) {
+			response = "Tell me morea bout your pets";
+		} else if (findKeyword(statement, "Mr. Padjen") >= 0) {
+			response = "He sounds like a good teacher.";
+		} else if (statement.trim().length() == 0) {
+			response = "Say something, please.";
+		} else if (findKeyword(statement, "Hi") >= 0 || findKeyword(statement, "Hello") >= 0) {
+			response = "Hello there";
+		} else if (findKeyword(statement, "life") >= 0) {
+			response = "What is the meaning of life?";
+		} else if (findKeyword(statement, "stupid") >= 0) {
+			response = "Me or you? Or maybe someone else?";
 		} else {
 			response = getRandomResponse();
 		}
@@ -56,7 +68,7 @@ public class Magpie3 {
 	 * @return the index of the first occurrence of goal in statement or -1 if
 	 *         it's not found
 	 */
-	private int findKeyword(String statement, String goal, int startPos) {
+	public int findKeyword(String statement, String goal, int startPos) {
 		String phrase = statement.trim().toLowerCase();
 		goal = goal.toLowerCase();
 
@@ -111,7 +123,7 @@ public class Magpie3 {
 	 * @return the index of the first occurrence of goal in statement or -1 if
 	 *         it's not found
 	 */
-	private int findKeyword(String statement, String goal) {
+	public int findKeyword(String statement, String goal) {
 		return findKeyword(statement, goal, 0);
 	}
 
