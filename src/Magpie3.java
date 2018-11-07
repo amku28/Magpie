@@ -48,6 +48,8 @@ public class Magpie3 {
 			response = "What is the meaning of life?";
 		} else if (findKeyword(statement, "stupid") >= 0) {
 			response = "Me or you? Or maybe someone else?";
+		} else if (findKeyword(statement, "thank you") >= 0) {
+			response = "You are welcome.";
 		} else {
 			response = getRandomResponse();
 		}
