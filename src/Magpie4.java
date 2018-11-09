@@ -123,9 +123,11 @@ public class Magpie4 {
 		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
-		int psn = findKeyword(statement, "I", 0);
-		String restOfStatement = statement.substring(psn + 1).trim();
-		restOfStatement = restOfStatement.substring(0, restOfStatement.length() - 4);
+		int psnOfI = findKeyword(statement, "I", 0);
+		int psnOfYou = findKeyword(statement, "you", psnOfI);
+
+		String restOfStatement = statement.substring(psnOfI + 1, psnOfYou)
+				.trim();
 		return "Why do you " + restOfStatement + " me?";
 	}
 
